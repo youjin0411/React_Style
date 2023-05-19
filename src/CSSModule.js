@@ -1,12 +1,17 @@
 // CSSModule.js
 import React from 'react';
-import styles from './styles/CSSModule.module.css'
+import styles from './styles/CSSModule.module.css';
+import classNames from 'classnames';
+classNames('one', 'two'); // = 'one two'
+classNames('one', { two: true }); // = 'one two'
+classNames('one', { two: false }); // = 'one'
+classNames('one', ['two', 'three']); // = 'one two three'
+const myClass = 'hello';
+classNames('one', myClass, { myCondition: true }); // = 'one hello myCondition'
 const CSSModule = () => {
 return (
-<div className={styles.wrapper}>
+<div className={`${styles.wrapper} ${styles.inverted}`}>
 안녕하세요, 저는 <span className="something">CSS Module!</span>
-    {/* CSSModule.module.css에서 : global로 클래스 이름을 설정하면
-    문자열 형태로 ("something")로 표시 */}
 </div>
 );
 };
