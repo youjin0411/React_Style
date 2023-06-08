@@ -1,6 +1,7 @@
 // CSSModule.js
 import React from 'react';
-import styles from './styles/CSSModule.module.css';
+// import styles from './styles/CSSModule.module.css';
+import styles from './CSSModule.module.scss';
 import classNames from 'classnames';
 classNames('one', 'two'); // = 'one two'
 classNames('one', { two: true }); // = 'one two'
